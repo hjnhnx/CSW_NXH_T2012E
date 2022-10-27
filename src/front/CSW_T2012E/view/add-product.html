@@ -11,7 +11,7 @@
 <body>
 <div class="container p-3">
     <header>
-        <a href="index.html" class="btn btn-info">+ Home</a>
+        <a href="index.html" class="btn btn-info">Home</a>
     </header>
     <br>
     <div class="main m-0 p-0 d-flex justify-content-center align-items-center">
@@ -35,14 +35,32 @@
                     <button id="add_prd" class="btn btn-danger" type="button">Submit</button>
                 </div>
             </form>
+            <a href="./index.html" id="home"></a>
         </div>
     </div>
 </div>
+<script src="../scripts/index.js"></script>
 <script src="../scripts/axios.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded",function (){
+        console.log(window.location.hostname)
         $('#add_prd').click(function (){
-            axios.post()
+            axios({
+                method: 'post',
+                url: 'http://localhost:4953/api/v1/products',
+                header: {},
+                data: {
+                    name: $('#product_name').val(),
+                    quantity: $('#quantity').val(),
+                    price: $('#price').val(),
+                }
+            }).then(res => {
+                if (res.status === 200){
+                    document.getElementById('home').click()
+                }
+                else
+                    alert("đã sảy lỗi vui lòng thử lại sau")
+            })
         })
     })
 </script>
