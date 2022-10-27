@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>ABCShop</title>
+</head>
+<body>
+<div class="container p-3">
+    <header>
+        <a href="index.html" class="btn btn-info">+ Home</a>
+    </header>
+    <br>
+    <div class="main m-0 p-0 d-flex justify-content-center align-items-center">
+        <div class="form m-auto border p-5" style="width: 550px;">
+            <h3>Add product</h3>
+            <form action="" style="height: 100%; width: 100%;">
+                <div class="form-group">
+                    <label for="product_name">Name</label>
+                    <input type="text" id="product_name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" class="form-control">
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button id="add_prd" class="btn btn-danger" type="button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../scripts/axios.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded",function (){
+        $('#add_prd').click(function (){
+            axios.post()
+        })
+    })
+</script>
+
+</body>
+</html>
